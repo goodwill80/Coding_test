@@ -12,7 +12,7 @@
  * Write your perfect code!
  */
 
-// *** Changes are denoted from point a to j (10 x changes made to the code)
+// *** Changes are denoted from point a to k (11 x changes made to the code)
 
 import React, { useEffect, useState } from 'react';
 
@@ -98,8 +98,9 @@ export default function Page() {
             href={item.link}
             text={item.text}
             linkClassName={item.id == 1 ? 'card__link--red' : ''}
-            target={item.id === 1 ? '_blank' : ''}
-            // j. function for onClick needs to be within an anonymous function to avoid being instantiated immediately
+            // j. For consistency, to apply open tab for all
+            target={item.id <= cards.length ? '_blank' : ''}
+            // k. function for onClick needs to be within an anonymous function to avoid being instantiated immediately
             onClick={() => analyticsTrackClick(item.link)}
           />
         );
